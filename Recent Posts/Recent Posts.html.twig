@@ -1,0 +1,49 @@
+<div class="ajtd-recent-posts">
+    <!-- <div class="ajtd-rp-inner-section"> -->
+    {% set args = { post_type: 'post', posts_per_page: 4 } %}
+    {% set posts = mb.get_posts(args) %}
+    {% for post in posts %}
+        {% set post_url = mb.get_the_permalink(post.ID) %}
+        {% set post_date_iso = mb.get_the_date('c', post) %}
+        {% set post_date_display = mb.get_the_date('F j, Y', post) %}
+        {% set thumbnail_id = mb.get_post_thumbnail_id(post.ID) %}
+        {% set featured_image_url = mb.get_the_post_thumbnail_url(post.ID, 'ajt-medium-wide') %}
+        {% set featured_image_srcset = mb.wp_get_attachment_image_srcset(thumbnail_id) %}
+        {% set post_category = mb.get_the_category(post.ID)|first %}
+        <article class="ajtd-rp-content" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="ajtd-rp-featured-image">
+                <a itemprop="url" href="{{ post_url }}" title="{{ post.post_title }} " rel="bookmark">
+                    <img itemprop="image" src="{{ featured_image_url }}" alt="{{ post.post_title }}" title="{{ post.post_title }}" srcset="{{ featured_image_srcset }}" />
+                </a>
+            </div>
+            <div class="ajtd-rp-title">
+                <h6>
+                    <a itemprop="url" href="{{ post_url }}" title="{{ post.post_title }} " rel="bookmark">
+                        <span itemprop="name">{{ post.post_title }}</span>
+                    </a>
+                </h6>
+            </div>
+            <div class="ajtd-rp-meta">
+                <span itemprop="datePublished" content="{{ post_date_iso }}">{{ post_date_display }}</span> / <span class="ajtd-rp-section" itemprop="articleSection"><a href="https://ajtatumdigital.com/blog/category/{{ post_category.slug }}/" title="{{ post_category.name }} - {{ post_category.description }} ">{{ post_category.name }}</a></span>
+                <div class="ajt-rp-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ author_name }}</span></div>
+                <div class="ajtd-rp-keywords" itemprop="keywords">{{ post_keywords }}</div>
+            </div>
+            <div class="ajtd-rp-details" data-postid="{{ post.ID }}">
+                <div class="wp-block-button ajtd-rp-show-details-btn" data-postid="{{ post.ID }}">
+                    <div class="wp-block-button__link" title="Show Excerpt for {{ post.post_title }}">
+                        Show Excerpt
+                    </div>
+                </div>
+                <div class="ajtd-rp-excerpt" data-postid="{{ post.ID }}" style="display: none;">
+                    <span itemprop="abstract">
+                            {{ post.post_excerpt }}<br />
+                            <a itemprop="url" href="{{ post_url }}" title="Read {{ post.post_title }}" rel="bookmark" class="ajt-rp-read-more">
+                            Read More »
+                            </a>
+                        </span>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+    <!-- </div> -->
+</div>
