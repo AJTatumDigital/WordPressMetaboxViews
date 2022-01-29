@@ -1,0 +1,62 @@
+.single .ast-author-meta .post-author-avatar img {
+    border-radius: 30% !important;
+    min-width: 125px !important;
+}
+
+h3.about-author {
+    margin-bottom: 0 !important;
+}
+
+h4.author-title {
+    margin-bottom: 0 !important;
+    color: #FFD500 !important;
+}
+
+.post-author-bio {
+    color: #fff !important;
+}
+
+.about-author-title-wrapper {
+    padding-bottom: 0.5em !important;
+}
+
+.ast-author-details {
+    background-color: #002E4D;
+    border-radius: 30px;
+    padding: 1em !important;
+}
+
+.business-position {
+    font-size: .9em;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    color: #D6F6FF;
+}
+
+.social-media-buttons {
+    text-align: left;
+}
+
+@media (max-width: 544px) {
+    .social-media-buttons,
+    .single .ast-author-meta .about-author-title-wrapper,
+    .single .ast-author-meta .post-author-bio {
+        text-align: center !important;
+    }
+}
+
+.social-media-buttons {
+    text-align: left;
+}
+
+.social-media-buttons>a {
+    margin-right: .45em;
+}
+
+.social-media-buttons>a:last-child {
+    margin-right: 0;
+}
+
+.social-media-buttons>a>img {
+    margin-top: 1.25em;
+}

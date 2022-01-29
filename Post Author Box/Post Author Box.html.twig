@@ -1,0 +1,56 @@
+{% set author_name_array = [author.first_name, author.last_name] %}
+{% set author_name = author_name_array|join(' ') %}
+<div class="ast-single-author-box">
+    <div class="ast-author-meta">
+        <div class="about-author-title-wrapper">
+            <h3 class="about-author">About The Author</h3>
+        </div>
+        <div class="ast-author-details" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <div class="post-author-avatar">
+                {{ mb.get_avatar( author.ID, 150, 'wavatar', author_name ) }}
+                </div>
+            <div class="post-author-bio">
+                <a class="url fn n" href="{{ author.posts_url }}" itemprop="url" rel="author">
+                    <h4 class="author-title"><span itemprop="givenName">{{ author.first_name }}</span><span itemprop="familyName">{{ author.last_name }}</span></h4>
+                </a>
+                <p class="business-position">
+                    <span itemprop="jobTitle">{{ author.ajt_user_info_business_position }}</span> @ <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">{{ author.ajt_user_info_business_name }}</span></span>
+                    </p>
+                <div class="post-author-desc">
+                    <div itemprop="description">
+                        {{ author.description }}
+                    </div>
+                    <div class="social-media-buttons">
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_facebook_profile_url }}" target="_blank" rel="noopener" title="Facebook Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/facebook.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Facebook Profile for {{ author_name }}" title="Facebook Profile for {{ author_name }}">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_facebook_messenger_url }}" target="_blank" rel="noopener" title="Message {{ author_name }} on Facebook Messenger">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/facebook-messenger.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Message {{ author_name }} on Facebook Messenger" title="Message {{ author_name }} on Facebook Messenger">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_twitter_profile_url }}" target="_blank" rel="noopener" title="Twitter Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/twitter.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Twitter Profile for {{ author_name }}" title="Twitter Profile for {{ author_name }}">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_linkedin_profile_url }}" target="_blank" rel="noopener" title="LinkedIn Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/linkedin.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="LinkedIn Profile for {{ author_name }}" title="LinkedIn Profile for {{ author_name }}">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_github_profile_url }}" target="_blank" rel="noopener" title="GitHub Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/github.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="GitHub Profile for {{ author_name }}" title="GitHub Profile for {{ author_name }}">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_medium_profile_url }}" target="_blank" rel="noopener" title="Medium Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/medium.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Medium Profile for {{ author_name }}" title="Medium Profile for {{ author_name }}">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_telegram_url }}" target="_blank" rel="noopener" title="Message {{ author_name }} on Telegram">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/telegram.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Message {{ author_name }} on Telegram" title="Message {{ author_name }} on Telegram">
+                        </a>
+                        <a itemprop="sameAs" href="{{ author.ajt_user_info_spotify_profile_url }}" target="_blank" rel="noopener" title="Spotify Profile for {{ author_name }}">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/spotify.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Spotify Profile for {{ author_name }}" title="Spotify Profile for {{ author_name }}">
+                        </a>
+                        <a href="https://discord.gg/PeeNQpvWUd" target="_blank" rel="noopener" title="Join {{ author_name }} on Discord">
+                            <img src="https://ajtatumdigital.com/wp-content/uploads/icons/social-media/swirl/svg/discord.svg#svgView(preserveAspectRatio(none))" width="32" height="32" alt="Join {{ author_name }} on AJ Tatum Digital's Discord Server" title="Join {{ author_name }} on AJ Tatum Digital's Discord Server">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
